@@ -69,7 +69,7 @@ function App() {
  
   return (
     <div>
-      <h3>Read CSV file in React - <a href="https://www.cluemediator.com" target="_blank" rel="noopener noreferrer">Clue Mediator</a></h3>
+      <h3>Read CSV file</h3>
       <input
         type="file"
         accept=".csv,.xlsx,.xls"
