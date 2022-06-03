@@ -52,8 +52,25 @@ function App() {
       console.log(list[i].ProjectID);
     }
 
+    const sortedList = list.sort(function(a, b) {
+      return a.ProjectID - b.ProjectID;
+    });
+    console.log(sortedList);
     
-    setData(list);
+    const newArr = sortedList.slice(0, 2);
+
+    // for (let index = 0; index < sortedList.length; index++) {
+    //   const element = sortedList[index];
+    //   console.log(element.ProjectID);
+    //   console.log(sortedList[index+1].ProjectID);
+
+    //   if(sortedList[index].ProjectID === sortedList[index+1].ProjectID){
+    //     console.log("ok");
+        
+    //   }
+      
+    // }
+    setData(newArr);
     setColumns(columns);
   }
  
