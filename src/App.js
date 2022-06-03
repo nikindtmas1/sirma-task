@@ -1,10 +1,13 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {csv} from 'd3';
 //import {moment} from 'moment';
 
 function App() {
 
-  
+  useEffect(() => {
+    csv('dataOne.csv')
+    .then(data => console.log(data))
+  },[]);
   
   const [dataFiles, setDataFiles] = useState();
   
