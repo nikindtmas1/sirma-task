@@ -1,23 +1,22 @@
 import {useState, useEffect} from "react";
-import {csv} from 'd3';
+import { csv } from 'd3';
 //import {moment} from 'moment';
 
 function App() {
 
   useEffect(() => {
     csv('dataOne.csv')
-    .then(data => console.log(data))
+    .then(data => {console.log(data)})
   },[]);
   
   const [dataFiles, setDataFiles] = useState();
   
-    const handleFileSelected = async (e) => {
+    const handleFileSelected = (e) => {
       
       const files = Array.from(e.target.files)
       setDataFiles(files)
       //console.log("files:", files)
-      let newData = await csv('dataOne.csv')
-     console.log(newData);
+   
     }
     
     if(dataFiles){
