@@ -1,15 +1,21 @@
-
+import {useState} from "react";
+import {csv} from 'd3';
 
 function App() {
 
+  const [dataFiles, setDataFiles] = useState();
   
-    const handleFileSelected = (e) => {
+    const handleFileSelected = async (e) => {
+      console.log(await csv(e.target.files));
       const files = Array.from(e.target.files)
-      console.log("files:", files)
-      console.log(e.currentTarget);
+      setDataFiles(files)
+      //console.log("files:", files)
     }
-  
     
+    if(dataFiles){
+      console.log("files:", dataFiles)
+
+    }
   
 
   return (
