@@ -34,6 +34,7 @@ function App() {
  
         // remove the blank rows
         if (Object.values(obj).filter(x => x).length > 0) {
+          
           list.push(obj);
         }
       }
@@ -45,6 +46,13 @@ function App() {
       selector: c,
     }));
  
+    
+    for(let i = 0; i < list.length; i++){
+
+      console.log(list[i].ProjectID);
+    }
+
+    
     setData(list);
     setColumns(columns);
   }
