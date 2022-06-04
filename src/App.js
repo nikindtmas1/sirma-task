@@ -31,13 +31,7 @@ function App() {
       for (let j = 0; j < row.length; j++) {
 
         let d = row[j];
-        if (d.length > 0) {
-          if (d[0] === '"')
-            d = d.substring(1, d.length - 1);
-          if (d[d.length - 1] === '"')
-            d = d.substring(d.length - 2, 1);
-        }
-        row[j] = d;
+        row[j] = /"?(.+)"?/.exec(d)[1];
       }
 
 
