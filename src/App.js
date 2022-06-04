@@ -61,8 +61,8 @@ function App() {
 
     const projectIds = _.uniq(sortedList.map(value => value.projectId));
 
-    for (let project of projectIds) {
-      const records = sortedList.filter(value => value.projectId === project);
+    for (let projectID of projectIds) {
+      const records = sortedList.filter(value => value.projectId === projectID);
       if (records.length !== 2) continue;
 
       const employeeIds = records.map(value => value.employeeId);
@@ -71,10 +71,10 @@ function App() {
       const daysSpent = dateTo.diff(dateFrom, 'days');
 
       commonProjects.push({
-        employee1: employeeIds[0],
-        employee2: employeeIds[1],
+        employeeID1: employeeIds[0],
+        employeeID2: employeeIds[1],
         daysSpent,
-        project
+        projectID
       })
     }
 
