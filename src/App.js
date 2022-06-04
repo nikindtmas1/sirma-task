@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as XLSX from 'xlsx';
+//import * as XLSX from 'xlsx';
 import DataTable from 'react-data-table-component';
 //import { csv } from 'd3';
 //import {moment} from 'moment';
@@ -42,7 +42,6 @@ function App() {
  
     // prepare columns list from headers
     const columns = headers.map(c => ({
-      name: c,
       selector: c,
     }));
  
