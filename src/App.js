@@ -11,13 +11,12 @@ function App() {
   // process CSV data
   const processData = dataString => {
 
-    const dataStringLines = dataString.split(/\r\n|\n/);
+    const dataStringLines = dataString.split(/\r\n|\n/);//split by new line
     const rows = [];
 
     for (let i = 0; i < dataStringLines.length; i++) {
       const row = dataStringLines[i]
-      const rowData = row.split(/,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/);
-
+      const rowData = row.split(/,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/);// split by comma
       if (rowData.length !== 4) {
         throw new Error("Expected csv with 4 colums per row. Invalid data.")
       }
@@ -34,7 +33,6 @@ function App() {
         row[j] = /"?(.+)"?/.exec(d)[1];
       }
 
-
       const [employeeId, projectId, dateFrom, dateTo] = row;
 
       const obj = {
@@ -43,7 +41,6 @@ function App() {
         dateFrom,
         dateTo
       };
-
       list.push(obj);
     }
 
